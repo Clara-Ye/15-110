@@ -33,17 +33,17 @@ z = x % int(y)
 '''
 Question 5: Print "The value of x is " and the value of x
 '''
-print("The value of x is",x)
+print("The value of x is", x)
 
 '''
 Question 6: Print "The value of y is " and the value of y
 '''
-print("The value of y is",y)
+print("The value of y is", y)
 
 '''
 Question 7: Print "The value of z is " and the value of z
 '''
-print("The value of z is",z)
+print("The value of z is", z)
 
 '''
 Question 8: Algorithm Implementation:
@@ -56,7 +56,7 @@ using variables profS and profK.
 '''
 profS = "Stephanie"
 profK = "Kelly"
-print("Hello",profS,"and",profK + "!")
+print("Hello", profS, "and", profK + "!")
 
 '''
 Question 9: Algorithm Implementation:
