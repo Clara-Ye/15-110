@@ -14,11 +14,10 @@ that the numbers a, b, and c may be given in any order.
 '''
 
 def pythagoreanChecker(a, b, c):
-    if a**2 + b**2 == c**2 or a**2 + c**2 == b**2 or b**2 + c**2 == a**2:
-        result = True
+    if (a**2 + b**2 == c**2) or (a**2 + c**2 == b**2) or (b**2 + c**2 == a**2):
+        return True
     else:
-        result = False
-    return result
+        return False
 
 ''' #2 - compoundInterest(base, rate, years) - 5pts
 Write the function compoundInterest(base, rate, years), which calculates the 
@@ -38,9 +37,9 @@ three numbers are non-negative.
 '''
 
 def compoundInterest(base, rate, years):
-    while years > 0:
-        base = base * (rate + 1)
-        years = years - 1
+    while (years > 0):
+        base *= (rate + 1)
+        years -= 1
     return base
 
 ''' #3 - factorial(x) - 5pts
@@ -51,8 +50,8 @@ built-in function math.factorial; that would make this too easy.
 
 def factorial(x):
     result = 1
-    for i in range(1,x+1):
-        result = result * i
+    for i in range(1, x+1):
+        result *= i
     return result
 
 ''' #4 - countSentences(s) - 5pts
@@ -75,12 +74,12 @@ problem much easier. Specifically, s.replace() and s.split() might be helpful...
 
 def countSentences(s):
     count = 1
-    t = s.replace(". ","@")
-    u = t.replace("! ","@")
-    v = u.replace("? ","@")
+    t = s.replace(". ", "@")
+    u = t.replace("! ", "@")
+    v = u.replace("? ", "@")
     for i in range(len(v)):
         if v[i] == "@":
-            count = count + 1
+            count += 1
     return count
 
 ''' #5 - printTriangle(n) - 10pts
@@ -110,9 +109,9 @@ two asterisks, etc. So printTriangle(9) would look like:
 '''
 
 def printTriangle(n):
-    for i in range(1,int((n+1)/2),1):
+    for i in range(1, ((n+1)//2), 1):
         print("*" * i)
-    for i in range(int((n+1)/2),0,-1):
+    for i in range((n+1)//2), 0, -1):
         print("*" * i)
     return None
 
@@ -139,17 +138,16 @@ directory as your hw2.py file, so you can test your code!
 '''
 
 def decodeFile(filename):
-    f = open(filename,"r")
-    s = f.read()
-    f.close()
-    mes = ""
-    for line in s.split("\n"):
+    file = open(filename,"r")
+    str = f.read()
+    file.close()
+    message = ""
+    for line in string.split("\n"):
         for num in line.split(" "):
             char = chr(int(num))
-            mes = mes + char
-        mes = mes + " "
-    mes = mes[0:len(mes)-1]
-    return mes
+            message += char
+        mes += " "
+    return mes[:len(mes)-1]
 
 ''' #7 - printPrimeFactors(x) - 10pts
 Write the function printPrimeFactors(x) which takes a positive integer x and 
@@ -184,12 +182,12 @@ Repeat the following procedure until the number x becomes 1
 
 def printPrimeFactors(x):
     n = 2
-    while x != 1:
-        if x % n != 0:
-            n = n + 1
+    while (x != 1):
+        if ((x % n) != 0):
+            n += 1
         else:
             print(n)
-            x = x / n
+            x /= n
     return None
 
 ################################################################################
